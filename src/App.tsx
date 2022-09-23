@@ -149,13 +149,16 @@ const App = () => {
 
   return (
   <>
+  <div className='main'>
     <h1>
-      Welcome to my word counter!
-      You have two options: 
+      Welcome to the word counter app!
+      You can upload a text file or enter the ID from a previous submission.
     </h1>
+    {state.errorMessage.length > 0 &&
     <h2 className="error-message">
       {state.errorMessage}
     </h2>
+    }
     <br></br>
     <br></br>
     <br></br>
@@ -163,7 +166,8 @@ const App = () => {
     {Object.keys(state.data!).length > 0 &&
     <Result data={state.data as {count: Object}}  />
     }
-  </>
+  </div>
+</>
   );
 
 }
